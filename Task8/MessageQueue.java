@@ -14,12 +14,19 @@ public class MessageQueue
    */ 
    public MessageQueue(int capacity) 
    { 
+      if(capacity < 1)
+         throw new IllegalArgumentException("Capacity must be greater than 0");
+
       elements = new Message[capacity]; 
       count = 0; 
       head = 0; 
       tail = 0; 
    } 
 
+   public Message getMessage(int index)
+   {
+      return elements[index];
+   }
 
    /** 
        Remove message at head. 
@@ -40,9 +47,12 @@ public class MessageQueue
        @precondition !isFull();
    */ 
    public void add(Message aMessage) 
-   { 
+   {  
+      if(count == elements.length)
+         increaseCapacity(this);
+      if(count!=0)
+         tail = (tail + 1) % elements.length;
       elements[tail] = aMessage; 
-      tail = (tail + 1) % elements.length; 
       count++; 
    } 
 
@@ -72,21 +82,42 @@ public class MessageQueue
    public Message peek() 
    { 
       return elements[head]; 
-   } 
+   }
+
+   /* NOTE: will only be called when the list is full */
+   public void increaseCapacity(MessageQueue elements) {
+      MessageQueue newQue = new MessageQueue(elements.count*2);
+      if(elements.tail < elements.head)
+      {
+         int helpVar = 0;
+         for(int i = 0; i<elements.count*2 ; i++)
+         {
+            if(i == elements.tail+1)
+               {
+                  helpVar = i;
+                  i += elements.count;
+               }
+            newQue.elements[i] = elements.getMessage(helpVar);
+            helpVar++;    
+         }
+         elements.head += elements.count;
+      }  
+      else
+      {
+         for(int i = 0; i<elements.count; i++)
+         {
+            newQue.add(elements.getMessage(i));
+         }
+      }
+      this.elements = newQue.elements;
+   }
 
    public static void main(String[] args) {
-      MessageQueue msgQ = new MessageQueue(10);
+      MessageQueue msgQ = new MessageQueue(1);
       msgQ.add(new Message("1"));
       msgQ.add(new Message("2"));
+      msgQ.remove();
       msgQ.add(new Message("3"));
-      msgQ.add(new Message("4"));
-      msgQ.add(new Message("5"));
-      msgQ.add(new Message("6"));
-      msgQ.add(new Message("7"));
-      msgQ.add(new Message("8"));
-      msgQ.add(new Message("9"));
-      msgQ.add(new Message("10"));
-      msgQ.add(new Message("11"));
    }
 
 }
