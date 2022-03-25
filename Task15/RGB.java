@@ -3,8 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class RGB extends JFrame implements ActionListener
-{
+public class RGB extends JFrame implements ActionListener{
     JButton redBtn;
     JButton greenBtn;
     JButton blueBtn;
@@ -16,13 +15,11 @@ public class RGB extends JFrame implements ActionListener
     int firstTime = 0;
     Graphics2D g2;
 
-   public RGB()
-   {
+   public RGB(){
         this.window = new JFrame();
 
         this.redBtn = new JButton("RED");
         redBtn.addActionListener(this);
-        
 
         this.blueBtn = new JButton("BLUE");
         blueBtn.addActionListener(this);
@@ -30,11 +27,9 @@ public class RGB extends JFrame implements ActionListener
         this.greenBtn = new JButton("GREEN");
         greenBtn.addActionListener(this);
 
-        this.panel = new JPanel()
-        {
+        this.panel = new JPanel(){
             @Override
-            public void paintComponent(Graphics g)
-            {
+            public void paintComponent(Graphics g){
                 super.paintComponent(g);
                  g2= (Graphics2D)g;
                 if(firstTime == 0){
@@ -69,24 +64,20 @@ public class RGB extends JFrame implements ActionListener
    }
 
 @Override
-public void actionPerformed(ActionEvent e) 
-{
-    if(e.getSource() == redBtn)
-    {
+public void actionPerformed(ActionEvent e){
+    if(e.getSource() == redBtn){
         red = true;
         blue = false;
         green = false;
         panel.repaint();
     } 
-    if(e.getSource() == blueBtn)
-    {
+    if(e.getSource() == blueBtn){
         blue = true;
         red = false;
         green = false;
         panel.repaint();
     } 
-    if(e.getSource() == greenBtn)
-    {
+    if(e.getSource() == greenBtn){
         green = true;
         red = false;
         blue = false;
@@ -94,10 +85,7 @@ public void actionPerformed(ActionEvent e)
     } 
 }
     
-
-
-
-public static void main(String[] args) {
+public static void main(String[] args){
     RGB rgb = new RGB();
 }
 }
