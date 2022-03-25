@@ -6,9 +6,10 @@
     ],
     "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
     "java.project.sourcePaths": [
+        "Task9",
         "Task8",
         "Task7",
-        "Task9",
-        "Task14"
+        "Task14",
+        "Task15"
     ]
 }
