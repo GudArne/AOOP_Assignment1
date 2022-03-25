@@ -27,7 +27,7 @@ public class matrix
     {
         // checking compatibility
         if(first.coloumn != second.coloumn && first.row != second.row)
-            return null;
+        throw new IllegalArgumentException("Not compatible matrices");
 
         matrix sum = new matrix(first.row, first.coloumn);
         for(int i = 0; i<first.row; i++)
@@ -45,7 +45,7 @@ public class matrix
         
         //checking compatibility
         if(first.coloumn != second.row)
-            return null;
+            throw new IllegalArgumentException("Not compatible matrices");
 
         matrix product = new matrix(first.row, second.coloumn);
         double helpVar = 0;
