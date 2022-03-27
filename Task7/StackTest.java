@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 public class StackTest {
     @Test public void push(){
         Stack stack = new Stack(15);
+
         // Test filling an empty list
         for (int i = 0; i < 15; i++) {
             stack.push(i);

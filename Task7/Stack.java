@@ -8,7 +8,7 @@ public class Stack{
         this.capacity = capacity;
         this.stack = new int[capacity];
     }
-
+    
     public boolean contains(int element){
         for (int i = 0; i < size; i++) {
             if(stack[i] == element)
@@ -47,7 +47,6 @@ public class Stack{
         int retval;
         if(size == 0)
             throw new IndexOutOfBoundsException("Stack is empty");
-        
         retval = stack[0];
         
         for (int i = 0; i < size-1; i++) {
@@ -62,7 +61,7 @@ public class Stack{
         if(n > size)
             throw new IndexOutOfBoundsException("Stack has fewer elements than " + n);
 
-        int tempList[] = new int[n];
+        int[] tempList = new int[n];
 
         if(n > 0){
             if(n == 1)
@@ -88,12 +87,12 @@ public class Stack{
             System.out.println(stack.pop());
         }
 
-        int elements[] = new int[15];
+        int[] elements = new int[15];
         for (int i = 0; i < elements.length; i++) {
             elements[i] = i;
         }
-        stack.push(15, elements);
-        elements = stack.pop(15);
+        // stack.push(15, elements);
+        // elements = stack.pop(15);
 
     }
 
