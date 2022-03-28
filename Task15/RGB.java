@@ -63,30 +63,30 @@ public class RGB extends JFrame implements ActionListener{
         window.setVisible(true);
    }
 
-@Override
-public void actionPerformed(ActionEvent e){
-    if(e.getSource() == redBtn){
-        red = true;
-        blue = false;
-        green = false;
-        panel.repaint();
-    } 
-    if(e.getSource() == blueBtn){
-        blue = true;
-        red = false;
-        green = false;
-        panel.repaint();
-    } 
-    if(e.getSource() == greenBtn){
-        green = true;
-        red = false;
-        blue = false;
-        panel.repaint();
-    } 
-}
-    
-public static void main(String[] args){
-    RGB rgb = new RGB();
-}
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == redBtn){
+            red = true;
+            blue = false;
+            green = false;
+            panel.repaint();
+        } 
+        if(e.getSource() == blueBtn){
+            blue = true;
+            red = false;
+            green = false;
+            panel.repaint();
+        } 
+        if(e.getSource() == greenBtn){
+            green = true;
+            red = false;
+            blue = false;
+            panel.repaint();
+        } 
+    }
+        
+    public static void main(String[] args){
+        RGB rgb = new RGB();
+    }
 }
 
