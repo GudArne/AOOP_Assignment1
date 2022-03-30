@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 
 
 public class RGB extends JFrame implements ActionListener{
@@ -9,8 +10,8 @@ public class RGB extends JFrame implements ActionListener{
     JButton blueBtn;
     JFrame window;
     JPanel panel;
-    boolean red;
-    boolean blue = true;
+    boolean red = true;
+    boolean blue;
     boolean green;
     int firstTime = 0;
     Graphics2D g2;
@@ -40,7 +41,6 @@ public class RGB extends JFrame implements ActionListener{
                 if(red == true){
                     g2.setColor(Color.RED);
                     g2.fillOval(200, 200, 50, 50);
-    
                 }
                 if(blue == true){
                     g2.setColor(Color.BLUE);
@@ -55,11 +55,10 @@ public class RGB extends JFrame implements ActionListener{
         panel.add(blueBtn);
         panel.add(greenBtn);
         panel.add(redBtn);
+        panel.setVisible(true);
 
         window.setSize(400,400);
         window.add(panel);
-
-        window.pack();
         window.setVisible(true);
    }
 
@@ -84,7 +83,7 @@ public class RGB extends JFrame implements ActionListener{
             panel.repaint();
         } 
     }
-        
+
     public static void main(String[] args){
         RGB rgb = new RGB();
     }
