@@ -91,8 +91,6 @@ public class Stack{
         for (int i = 0; i < elements.length; i++) {
             elements[i] = i;
         }
-        // stack.push(15, elements);
-        // elements = stack.pop(15);
 
     }
 

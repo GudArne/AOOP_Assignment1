@@ -15,7 +15,7 @@ public class RGB extends JFrame implements ActionListener{
     int firstTime = 0;
     Graphics2D g2;
 
-   public RGB(){
+    RGB(){
         this.window = new JFrame();
 
         this.redBtn = new JButton("RED");
