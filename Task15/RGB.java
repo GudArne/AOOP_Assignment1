@@ -9,8 +9,8 @@ public class RGB extends JFrame implements ActionListener{
     JButton blueBtn;
     JFrame window;
     JPanel panel;
-    boolean red;
-    boolean blue = true;
+    boolean red = true;
+    boolean blue;
     boolean green;
     int firstTime = 0;
     Graphics2D g2;
@@ -55,38 +55,42 @@ public class RGB extends JFrame implements ActionListener{
         panel.add(blueBtn);
         panel.add(greenBtn);
         panel.add(redBtn);
-
-        window.setSize(400,400);
+        panel.setPreferredSize(new Dimension(400,400));
         window.add(panel);
 
+        window.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        window.setLocationRelativeTo(null);
+        
+        window.setResizable(false);
         window.pack();
         window.setVisible(true);
    }
 
-@Override
-public void actionPerformed(ActionEvent e){
-    if(e.getSource() == redBtn){
-        red = true;
-        blue = false;
-        green = false;
-        panel.repaint();
-    } 
-    if(e.getSource() == blueBtn){
-        blue = true;
-        red = false;
-        green = false;
-        panel.repaint();
-    } 
-    if(e.getSource() == greenBtn){
-        green = true;
-        red = false;
-        blue = false;
-        panel.repaint();
-    } 
-}
-    
-public static void main(String[] args){
-    RGB rgb = new RGB();
-}
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == redBtn){
+            red = true;
+            blue = false;
+            green = false;
+            panel.repaint();
+        } 
+        if(e.getSource() == blueBtn){
+            blue = true;
+            red = false;
+            green = false;
+            panel.repaint();
+        } 
+        if(e.getSource() == greenBtn){
+            green = true;
+            red = false;
+            blue = false;
+            panel.repaint();
+        } 
+    }
+        
+    public static void main(String[] args){
+        RGB rgb = new RGB();
+        
+    }
 }
 
