@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 
 
 public class RGB extends JFrame implements ActionListener{
@@ -55,21 +54,10 @@ public class RGB extends JFrame implements ActionListener{
         panel.add(blueBtn);
         panel.add(greenBtn);
         panel.add(redBtn);
-<<<<<<< HEAD
-        panel.setPreferredSize(new Dimension(400,400));
-        window.add(panel);
-
-        window.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        window.setLocationRelativeTo(null);
-        
-        window.setResizable(false);
-        window.pack();
-=======
         panel.setVisible(true);
 
         window.setSize(400,400);
         window.add(panel);
->>>>>>> 41a77c703fccef4fcd16f2cf40f9463435fc1878
         window.setVisible(true);
    }
 
@@ -94,16 +82,9 @@ public class RGB extends JFrame implements ActionListener{
             panel.repaint();
         } 
     }
-<<<<<<< HEAD
-        
-    public static void main(String[] args){
-        RGB rgb = new RGB();
-        
-=======
 
     public static void main(String[] args){
         RGB rgb = new RGB();
->>>>>>> 41a77c703fccef4fcd16f2cf40f9463435fc1878
     }
 }
 
